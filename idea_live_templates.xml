@@ -1,0 +1,8 @@
+<template name="logm" value="log.debug(&quot;$METHOD_NAME$() called with $args_placeholders$&quot;,$args$);" description="Log method name and its arguments" toReformat="true" toShortenFQNames="true">
+  <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+  <variable name="args_placeholders" expression="groovyScript(&quot;_1.collect {it +' = [{}]'}.join(', ')&quot;, methodParameters())" defaultValue="" alwaysStopAt="false" />
+  <variable name="args" expression="groovyScript(&quot;_1.collect { it }.join(', ')&quot;, methodParameters())" defaultValue="" alwaysStopAt="false" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
